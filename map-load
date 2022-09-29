@@ -1,0 +1,43 @@
+#x=%XPOS%;
+#z=%ZPOS%;
+#y=249;
+#c1=100;
+#c2=0;
+#di=1;
+#chunks = 0;
+ 
+DO(%#c1%);
+    IF(#di=1);
+    #c2=#c2+1;
+    ENDIF;
+ 
+    IF(#di=3);
+    #c2=#c2+1;
+    ENDIF;
+ 
+    DO(%#c2%);
+        IF(#di=1);
+            #z=#z+144;
+        ENDIF;
+        IF(#di=2);
+            #x=#x+144;
+        ENDIF;
+        IF(#di=3);
+            #z=#z-144;
+        ENDIF;
+        IF(#di=4);
+            #x=#x-144;
+        ENDIF;
+ 
+        #chunks=#chunks+9*9;
+        log(<x=%#x% z=%#z% chunks open=%#chunks%>);
+        ECHO(/tppos %#x% %#y% %#z%);
+        WAIT(7);
+    LOOP;
+ 
+    #di=#di+1;
+    IF(#di>4);
+        #di=1;
+    ENDIF;
+ 
+LOOP;
