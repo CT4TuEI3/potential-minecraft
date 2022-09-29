@@ -1,0 +1,17 @@
+log(&c&lAutoClick Stopped);
+
+unset(clicker);
+
+stop();
+elseif(!clicker);
+
+log(&a&lAutoClick Starting);
+
+set(clicker);
+
+do;
+
+    key(use);
+
+loop;
+endif;
