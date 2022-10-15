@@ -1,6 +1,23 @@
-#x=%XPOS%;
+//#di=1 - 1 - eto yug, 2 - vostok, 3 - sever, 4 - zapad
+
+if(clicker);
+
+log(&c&lTeleportation stopped);
+
+unset(clicker);
+
+stop();
+elseif(!clicker);
+
+log(&a&lTeleportation starting);
+
+set(clicker);
+
+do;
+
+    #x=%XPOS%;
 #z=%ZPOS%;
-#y=249;
+#y=500;
 #c1=100;
 #c2=0;
 #di=1;
@@ -30,7 +47,7 @@ DO(%#c1%);
         ENDIF;
  
         #chunks=#chunks+9*9;
-        log(<x=%#x% z=%#z% chunks open=%#chunks%>);
+        // log(<x=%#x% z=%#z% chunks open=%#chunks%>);
         ECHO(/tppos %#x% %#y% %#z%);
         WAIT(7);
     LOOP;
@@ -41,3 +58,6 @@ DO(%#c1%);
     ENDIF;
  
 LOOP;
+
+loop;
+endif;
