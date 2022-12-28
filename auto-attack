@@ -1,1 +1,1 @@
-$${if(automine);unset(automine);else;set(automine);do;wait(1ms);key(attack);while(automine);endif;}$$
+$${if(automine);log("&4Кликер(ЛКМ) выключен");unset(automine);else;log("&2Кликер(ЛКМ) включён");set(automine);do;wait(1ms);key(attack);while(automine);endif;}$$
