@@ -1,17 +1,1 @@
-log(&c&lAutoClick Stopped);
-
-unset(clicker);
-
-stop();
-elseif(!clicker);
-
-log(&a&lAutoClick Starting);
-
-set(clicker);
-
-do;
-
-    key(use);
-
-loop;
-endif;
+$${if(automine);log("&4Кликер(ЛКМ) выключен");unset(automine);else;log("&2Кликер(ЛКМ) включён");set(automine);do;wait(1ms);key(use);while(automine);endif;}$$
